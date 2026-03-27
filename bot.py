@@ -9,7 +9,7 @@ from datetime import timedelta
 GULAG_CHANNEL_NAME = "gulag"
 TIMEOUT_SECONDS = 60
 
-# Full tankie mode - anything remotely capitalist
+
 BANNED_WORDS = [
     # Core capitalism
     "profit", "profits", "profitable", "capital", "capitalism", "capitalist",
@@ -182,9 +182,9 @@ async def free_command(interaction: discord.Interaction, member: discord.Member)
 @bot.tree.command(name="banned_words", description="See the list of banned capitalist words")
 async def banned_words_command(interaction: discord.Interaction):
     # Split into chunks so it fits in a message
-    words = ", ".join(f"`{w}`" for w in BANNED_WORDS[:40])
+    words = ", ".join(f"`{w}`" for w in BANNED_WORDS[:99])
     await interaction.response.send_message(
-        f"🚩 **Banned Capitalist Terms (first 40):**\n{words}\n\n...and {len(BANNED_WORDS) - 40} more. Stay vigilant, comrade!",
+        f"🚩 **Banned Capitalist Terms (first 99):**\n{words}\n\n...and {len(BANNED_WORDS) - 99} more. Stay vigilant, comrade!",
         ephemeral=True
     )
 
@@ -195,6 +195,7 @@ async def glory_command(interaction: discord.Interaction):
         "✊🚩 **GLORY TO THE COMMIE SMP!** 🚩✊\n"
         "The workers own the means of production!\n"
         "The bourgeoisie shall not pass!"
+        "LONG LIVE THE REVOLUTION!"
     )
 
 
